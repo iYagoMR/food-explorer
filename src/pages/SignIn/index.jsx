@@ -6,6 +6,9 @@ import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
 import { Brand } from '../../components/Brand';
 
+import { GrUserAdmin } from "react-icons/gr";
+import { FaRegUser } from "react-icons/fa";
+
 import { Link } from 'react-router-dom';
 
 import { Container, Form } from './styles';
@@ -14,7 +17,7 @@ export function SignIn() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
   
-    const { signIn } = useAuth();
+    const { signIn, bypassLogin } = useAuth();
   
     function handleSignIn() {
         signIn({ email, password });
@@ -22,9 +25,10 @@ export function SignIn() {
   
     return (
       <Container>
-        <Brand width={3} height={3} fontSize={2.5} pColor={"#065E7C"}/>
+        <Brand width={3} height={3} fontSize={2.5} pColor={"#065E7C"} demo={true}/>
         <Form>
-            <Input 
+            {/* Login commented out for demo purposes */}
+            {/* <Input 
                 placeholder="Example: jhon@email.com"
                 type="text"
                 label="Email"
@@ -46,7 +50,19 @@ export function SignIn() {
                 <ButtonText
                     title="Create account"
                 />
-            </Link>
+            </Link> */}
+            <Button 
+                title="Customer" 
+                icon={FaRegUser}
+                onClick={() => bypassLogin("admin")}
+            />
+            <Button 
+                title="Admin" 
+                icon={GrUserAdmin}
+                onClick={() => bypassLogin("customer")}
+            />
+            
+            <h4>The login page was removed in this demo version of the application. You can choose if you want to view the app as a customer of admin.</h4>
         </Form>
       </Container>
     )

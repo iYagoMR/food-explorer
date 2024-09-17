@@ -2,7 +2,7 @@ import { useAuth } from '../../hooks/auth'
 import { Container } from './styles';
 import { USER_ROLE } from '../../utils/roles';
 
-export function Brand({ width, height, isclosed, fontSize, pColor, noAdminTag }){
+export function Brand({ width, height, isclosed, fontSize, pColor, noAdminTag, demo }){
     const { signOut, user } = useAuth();
 
     return(
@@ -15,6 +15,10 @@ export function Brand({ width, height, isclosed, fontSize, pColor, noAdminTag })
                 !noAdminTag &&
                 user?.role === USER_ROLE.ADMIN &&
                 <h2>admin</h2>
+            }
+            {
+                demo &&
+                <h3>demo version</h3>
             }
         </Container>
     )

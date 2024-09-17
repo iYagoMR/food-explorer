@@ -35,6 +35,41 @@ function AuthProvider({ children }) {
     }
   }
 
+  async function bypassLogin(role){
+    try {
+      let response;
+      if (role == "admin") {
+        response = await api.post("sessions", {
+          email: "admin@email.com",
+          password: "123",
+        });
+      } else {
+        response = await api.post("sessions", {
+          email: "customer@email.com",
+          password: "123",
+        });
+      }
+      
+
+      const { token, user } = response.data;
+
+      localStorage.setItem("@estock:user", JSON.stringify(user));
+      localStorage.setItem("@estock:token", token);
+
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+      setData({ token, user });
+
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert("Não foi possível entrar." + error);
+      }
+    }
+
+  }
+
   function signOut() {
     localStorage.removeItem("@estock:token");
     localStorage.removeItem("@estock:user");
@@ -73,6 +108,7 @@ function AuthProvider({ children }) {
     <AuthContext.Provider value={{
       signIn,
       signOut,
+      bypassLogin,
       user: data.user
     }}>
       {children}

@@ -15,4 +15,9 @@ export const Container = styled(Link)`
         color: ${({theme}) => theme.COLORS.CAKE_200};
         font-weight: 400;
     }
+    h3{
+        font-size: 1.4rem;
+        color: ${({theme}) => theme.COLORS.CAKE_200};
+        font-weight: 400;
+    }
 `;

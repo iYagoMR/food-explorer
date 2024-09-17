@@ -13,6 +13,11 @@ export const Container = styled.div`
         justify-content: center;
     }
 
+    h4 {
+        color: ${({theme}) => theme.COLORS.LIGHT_100};
+        font-weight: 400;
+    }
+
 `;
 
 export const Form = styled.form`

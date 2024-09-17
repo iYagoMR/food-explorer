@@ -26,7 +26,13 @@ export function DishCard({isAdmin, data, addFavBtn, ...rest}){
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const pictureUrl = data.picture ? `${api.defaults.baseURL}/files/${data.picture}` : picturePlaceholder;
+    let pictureUrl;
+    if(data.user_id == null){
+        pictureUrl = data.picture;
+    }
+    else{
+        pictureUrl = data.picture ? `${api.defaults.baseURL}/files/${data.picture}` : picturePlaceholder;
+    }
 
     //handle add new dish to the cart
     function handleAddToCart(dish){

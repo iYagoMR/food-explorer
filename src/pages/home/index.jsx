@@ -26,6 +26,7 @@ export function Home(){
         async function fetchDishes(){
             const response = await api.get(`/dishes?name=${search}&ingredients=${ingredientsSelected}`);
             setDishes(response.data);
+            console.log(response);
         }
         fetchDishes();
     }, [ingredientsSelected, search]);
