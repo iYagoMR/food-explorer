@@ -28,10 +28,21 @@ export function DishDetails(){
     const [ cartIsOpen, setCartIsOpen ] = useState(false);
     const [ quantity, setQuantity ] = useState(1);
 
+    
+
     const navigate = useNavigate();
     const params = useParams();
     const dispatch = useDispatch();
 
+    let pictureUrl = picturePlaceholder;
+    if (data) { // Ensure data is not null or undefined
+    
+        if (data.user_id == null) {
+            pictureUrl = data.picture ? data.picture : picturePlaceholder; // Handle null data.picture too
+        } else {
+            pictureUrl = data.picture ? `${api.defaults.baseURL}/files/${data.picture}` : picturePlaceholder;
+        }
+    }
 
     //handle add new dish to the cart
     function handleAddToCart(dish){
@@ -56,10 +67,11 @@ export function DishDetails(){
         async function fetchDish(){
           const response = await api.get(`/dishes/${params.id}`);
           setData(response.data);
+          
         }
     
         fetchDish();
-    }, []);
+    }, [params.id]);
 
     const formattedQuantity = String(quantity).padStart(2, '0');
 
@@ -75,7 +87,7 @@ export function DishDetails(){
             <main>
                 <PageSection/>
                 <div className='wrapper'>
-                    <img src={data.picture ? `${api.defaults.baseURL}/files/${data.picture}` : picturePlaceholder} alt="dish picture" />
+                    <img src={`/` + pictureUrl} alt="dish picture" />
                     <div className='dish-description'>
                         <h1>{data.name}</h1>
                         <p>

@@ -180,7 +180,7 @@ export const DishSection = styled.div`
         > div{
 
             @media (min-width: 1200px){
-                min-width: unset;
+                min-width: 273px;
                 flex: 1;
             }
         }
