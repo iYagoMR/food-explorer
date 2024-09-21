@@ -156,7 +156,33 @@ export const DishSection = styled.div`
     > div {
         display: flex;
         gap: 20px;
-        overflow-y: scroll;
+        overflow-x: auto;
         padding-bottom: 20px;
+
+        /* Scrollbar for WebKit browsers (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            height: 10px; /* Height for horizontal scrollbars */
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background-color: ${({ theme }) => theme.COLORS.LIGHT_100};
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: ${({ theme }) => theme.COLORS.DARK_1000};
+        }
+
+        /* Scrollbar for Firefox */
+        scrollbar-color: ${({ theme }) => theme.COLORS.LIGHT_700} ${({ theme }) => theme.COLORS.DARK_1000}; /* Thumb color Track color */
+        scrollbar-width: thin; /* Thin scrollbar */
+
+        > div{
+
+            @media (min-width: 1200px){
+                min-width: unset;
+                flex: 1;
+            }
+        }
     }
 `
