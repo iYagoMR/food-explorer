@@ -28,7 +28,7 @@ export function DishCard({isAdmin, data, addFavBtn, ...rest}){
 
     let pictureUrl;
     if(data.user_id == null){
-        pictureUrl = `../../${data.picture}`;
+        pictureUrl = `/${data.picture}`;
     }
     else{
         pictureUrl = data.picture ? `${api.defaults.baseURL}/files/${data.picture}` : picturePlaceholder;
