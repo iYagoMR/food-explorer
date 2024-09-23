@@ -12,7 +12,7 @@ import { Bottom } from '../../components/Bottom';
 import { Cart } from '../../components/Cart';
 import { add } from '../../store';
 
-import picturePlaceholder from '../../assets/plates/Mask group-11.png';
+import picturePlaceholder from '../../assets/plates/Mask-group-11.png';
 
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { PiReceipt } from "react-icons/pi";

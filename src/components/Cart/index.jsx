@@ -10,7 +10,7 @@ import { OrderItem } from '../OrderItem';
 
 import { IoIosArrowRoundForward } from "react-icons/io";
 
-import defaultPhoto from '../../assets/plates/Mask group-1.png';
+import defaultPhoto from '../../assets/plates/Mask-group-1.png';
 
 export function Cart({ cartIsOpen, onCloseCart }){
 

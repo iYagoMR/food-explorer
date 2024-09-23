@@ -11,7 +11,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { IoCart } from "react-icons/io5";
 import { GoPencil } from "react-icons/go";
 
-import picturePlaceholder from "../../assets/plates/Mask group-1.png";
+import picturePlaceholder from "../../assets/plates/Mask-group-1.png";
 
 import { USER_ROLE } from '../../utils/roles';
 import { useAuth } from '../../hooks/auth';

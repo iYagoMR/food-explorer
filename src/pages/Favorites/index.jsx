@@ -4,7 +4,7 @@ import { Bottom } from '../../components/Bottom';
 import { Cart } from '../../components/Cart';
 import { Container } from './styles';
 
-import picturePlaceholder from '../../assets/plates/Mask group-1.png'
+import picturePlaceholder from '../../assets/plates/Mask-group-1.png'
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 import { useNavigate } from 'react-router-dom';
