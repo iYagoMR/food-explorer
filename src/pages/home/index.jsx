@@ -11,7 +11,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 import BannerImg from '../../assets/banner-img.png'
 
-import dishPlaceholderImg from '../../assets/plates/Mask group-10.png'
+import dishPlaceholderImg from '../../assets/plates/Mask-group-10.png'
 import { Cart } from '../../components/Cart';
 
 export function Home(){
