@@ -92,7 +92,7 @@ export const Container = styled.div`
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
         min-width: 248px;
-        max-width: 248px;
+        max-width: 280px;
         .price{
             margin-top: 5px;
             font-size: 1.6rem;
