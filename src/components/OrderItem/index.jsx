@@ -1,10 +1,19 @@
 import { Container } from './styles';
 
+import picturePlaceholder from "../../assets/plates/Mask-group-1.png";
+
 import { api } from '../../services/api';
 
-export function OrderItem({picture, name, quantity, price, onClick}){
+export function OrderItem({picture, name, quantity, price, onClick, user}){
 
-    const pictureUrl = `${api.defaults.baseURL}/files/${picture}`;
+
+    let pictureUrl;
+    if(user == null){
+        pictureUrl = `/src/${picture}`;
+    }
+    else{
+        pictureUrl = data.picture ? `${api.defaults.baseURL}/files/${picture}` : picturePlaceholder;
+    }
     
     return(
         <Container>

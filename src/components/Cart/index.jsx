@@ -44,6 +44,7 @@ export function Cart({ cartIsOpen, onCloseCart }){
                                 picture={dish.picture}
                                 price={dish.price}
                                 quantity={dish.quantity}
+                                user={dish.user_id}
                                 onClick={() => handleRemoveDish(dish)}
                             />
                         )

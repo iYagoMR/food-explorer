@@ -54,12 +54,12 @@ export function SignIn() {
             <Button 
                 title="Customer" 
                 icon={FaRegUser}
-                onClick={() => bypassLogin("admin")}
+                onClick={() => bypassLogin("customer")}
             />
             <Button 
                 title="Admin" 
                 icon={GrUserAdmin}
-                onClick={() => bypassLogin("customer")}
+                onClick={() => bypassLogin("admin")}
             />
             
             <h4>The login page was removed in this demo version of the application. You can choose if you want to view the app as a customer of admin.</h4>
